@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Премиальный темный градиент на фоне */
+body {
+            /* Магия фона: сначала идет темная полупрозрачная маска, затем ссылка на фото */
+            background-image: 
+                linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.8)), 
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');
+            
+            background-size: cover; /* Картинка всегда заполняет весь экран */
+            background-position: center; /* Центрируем самое важное в картинке */
+            background-repeat: no-repeat; /* Запрещаем картинке размножаться плиткой */
+            background-attachment: fixed; /* Делаем фон неподвижным (эффект параллакса) */
+            
+            color: #d4af37; /* Золотой цвет текста */
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Базовые настройки для всех элементов: изначально они невидимы (opacity: 0) и сдвинуты вниз */
+        .animated {
+            opacity: 0;
+            animation: fadeUp 1.5s ease-out forwards;
+        }
+
+        /* Настраиваем задержки, чтобы текст появлялся по очереди (каскадом) */
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 1.0s; } /* Имена появляются позже */
+        .delay-3 { animation-delay: 1.7s; }
+        .delay-4 { animation-delay: 2.3s; }
+        .delay-5 { animation-delay: 2.8s; }
+
+        /* Дизайн текста */
+        h1 {
+            font-size: 5rem;
+            margin: 10px 0;
+            font-weight: 400;
+            color: #d4af37;
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.4); /* Романтичное свечение */
+        }
+        
+        p {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin: 10px 0;
+            color: #cccccc;
+        }
+
+        .date {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-top: 30px;
+            color: #d4af37;
+            border-top: 1px solid #d4af37;
+            border-bottom: 1px solid #d4af37;
+            padding: 15px 40px;
+            letter-spacing: 4px;
+            transition: all 0.5s ease; /* Плавность при наведении мышки */
+            cursor: pointer;
+        }
+
+        /* Эффект, когда гость наводит мышку на дату */
+        .date:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .location {
+            margin-top: 40px;
+        }
+
+        /* САМА МАГИЯ АНИМАЦИИ (Выплывание наверх + проявление) */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <p class="animated delay-1">Мы приглашаем вас разделить нашу радость</p>
+    
+    <h1 class="animated delay-2">Айдос & Аружан</h1>
+    
+    <p class="animated delay-3">Приглашаем вас на торжество, посвященное дню нашей свадьбы!</p>
+
+    <div class="animated delay-4 date">
+        25 АВГУСТА 2026 | 18:00
+    </div>
+
+    <p class="animated delay-5 location">Ресторан "Grand Hall", Алматы</p>
+
+</body>
+</html>
